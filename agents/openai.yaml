@@ -1,0 +1,4 @@
+interface:
+  display_name: "ICC 官网检索"
+  short_description: "检索 ICC 官网文书、新闻与案件页；支持分页、正文/PDF 读取和受限回退"
+  default_prompt: "使用 $icc-searcher 检索 ICC 官网，区分原生站内结果与 Legal Tools 回退，并在引用前读取链接正文。"
