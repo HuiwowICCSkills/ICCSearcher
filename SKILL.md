@@ -39,6 +39,7 @@ description: 独立检索国际刑事法院（ICC）官网，查找法院文书�
 - `/search` 每页渲染 25 条，总数写成 `About N results`；Drupal `page` 参数为零基。
 - 搜索结果只是页面元数据，不是链接文书正文。引用前必须对 `url` 运行 `fetch`，并核对实际文本、日期、文书号和程序状态。
 - 搜索结果覆盖 `/court-record/`、`/news/`、`/case...` 等路径，不能把新闻稿当作法院裁判文书。
+- 高位阶直接判例不足时，可继续检索同一争点在相关案件的当事人书状、程序异议和裁判中如何出现。通常先用书状或程序记录确认争点已提交，再以 `fetch` 到的裁判全文确认分庭未支持亦未否定，之后才能标为“明示未决”“以其他理由回避”或“仅提及未处理”，并记录对应段落、程序阶段和未裁判原因；搜索命中或不能证明争点曾被提出，都不能推定 ICC 留有空间。
 - ICC 前门可能返回 `Loading site please wait...`、Cookie/JavaScript 挑战或 `Sorry, you have been blocked`。这些是访问失败，不是零结果。
 - 原生 `/search` 失败时，`search` 才降级到有限 `/cases` 爬取和 Legal Tools ICC 机构过滤记录；回退结果会标记 `partial`，不能证明官网当前状态或完整覆盖。
 - ICC Legal Tools Database 的完整检索、官方文号精确定位和 PDF 下载由独立 `LegalToolsSearcher` 承担。本 skill 只把 Legal Tools 用作 ICC 官网失败时的标注镜像回退。
