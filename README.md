@@ -5,7 +5,7 @@ It searches `https://www.icc-cpi.int/search`, reads linked HTML or PDF content,
 and falls back to a bounded `/cases` crawl plus labelled Legal Tools ICC records
 when the site's WAF blocks the native route.
 
-Repository: <https://github.com/GDUFSICCSkills/ICCSearcher> (private).
+Repository: <https://github.com/HuiwowICCSkills/ICCSearcher> (private).
 
 ## Install
 
